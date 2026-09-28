@@ -4,10 +4,10 @@ const tokenSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "User", // 👉 Tells Mongoose this ID points to the 'User' collection
+    ref: "User",
   },
   token: {
-    type: String, // 👉 The actual random string
+    type: String,
     required: true,
   },
   type: {
@@ -17,12 +17,12 @@ const tokenSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now, // 👉 Automatically sets the timestamp so you don't have to
+    default: Date.now,
   },
   expiresAt: {
     type: Date,
     required: true,
-    expires: 0, // 👉 THE MAGIC: MongoDB deletes the document when Date.now() hits this timestamp
+    expires: 0,
   },
 });
 
